@@ -1,4 +1,4 @@
-package com.raccon.GymRank.domain.model;
+package com.raccon.GymRank.domain.model.vo;
 
 import java.util.Objects;
 
