@@ -23,10 +23,6 @@ public class ExerciseController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ExerciseDTO> getExercise(@PathVariable UUID id) {
-        try {
             return ResponseEntity.ok(fetchExercise.fetchExerciseById(id));
-        }catch (Exception e) {
-            return ResponseEntity.status(500).body(null);
-        }
     }
 }
