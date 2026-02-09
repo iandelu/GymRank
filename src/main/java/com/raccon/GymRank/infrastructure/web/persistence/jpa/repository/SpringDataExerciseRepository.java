@@ -1,11 +1,12 @@
 package com.raccon.GymRank.infrastructure.web.persistence.jpa.repository;
 
-import com.raccon.GymRank.infrastructure.web.dto.ExerciseDTO;
+import com.raccon.GymRank.infrastructure.web.persistence.jpa.ExerciseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
-public interface ExerciseRepository extends CrudRepository<ExerciseDTO, Long>{
+public interface SpringDataExerciseRepository extends JpaRepository<ExerciseEntity, UUID>{
 
 }
