@@ -1,13 +1,20 @@
 spring:
   application:
     name: GymRank
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gymrank
+    username: gym_user
+    password: password
 
-    h2:
-      console.enabled: true
-      datasource:
-        url: jdbc:h2:mem:dcbapp
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: password
-        jpa:
-          spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+
+
+

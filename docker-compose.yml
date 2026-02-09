@@ -5,7 +5,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: gym_rank
+      POSTGRES_DB: gymrank
       POSTGRES_USER: gym_user
       POSTGRES_PASSWORD: password
     volumes:
