@@ -9,5 +9,11 @@ public enum MuscleGroup {
     CARDIO,
     CORE,
     FULL_BODY,
-    OTHER
+    OTHER,
+    DEFAULT;
+
+    static MuscleGroup fromValue(String value){
+        if (value == null) return MuscleGroup.DEFAULT;
+        return valueOf(value);
+    }
 }

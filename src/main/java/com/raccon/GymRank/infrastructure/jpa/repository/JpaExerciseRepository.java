@@ -3,6 +3,7 @@ package com.raccon.GymRank.infrastructure.jpa.repository;
 import com.raccon.GymRank.domain.model.Exercise;
 import com.raccon.GymRank.domain.repository.ExerciseRepository;
 import com.raccon.GymRank.infrastructure.jpa.ExerciseEntity;
+import com.raccon.GymRank.infrastructure.jpa.mapper.ExerciseModelToEntityMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -20,29 +21,13 @@ public class JpaExerciseRepository implements ExerciseRepository {
 
     @Override
     public void save(Exercise exercise) {
-
-        ExerciseEntity entity = new ExerciseEntity(
-            exercise.name(),
-            exercise.description(),
-            exercise.group(),
-            exercise.category(),
-            exercise.getImage()
-        );
+        ExerciseEntity entity = ExerciseModelToEntityMapper.toEntity(exercise);
         repo.save(entity);
     }
 
     @Override
     public Optional<Exercise> findById(UUID id) {
         Optional<ExerciseEntity> entity = repo.findById(id);
-
-        Exercise model = new Exercise(
-                entity.get().getName(),
-                entity.get().getDescription(),
-                entity.get().getMuscleGroup(),
-                entity.get().getExerciseCategory(),
-                entity.get().getImage()
-        );
-
-        return Optional.of(model);
+        return entity.map(ExerciseModelToEntityMapper::toModel);
     }
 }

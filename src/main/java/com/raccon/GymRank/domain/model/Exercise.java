@@ -14,37 +14,21 @@ public class Exercise{
     public Exercise(String name, String description, String image, String group, String category) {
         this.name = new ExerciseName(name);
         this.description = new ExerciseDescription(description);
-        this.group = MuscleGroup.valueOf(group); //he leido que valueOf es case sensitive son malas practicas en dominio pr si viene null
+        this.group = MuscleGroup.fromValue(group);
         this.category = ExerciseCategory.valueOf(category);
-        this.image = image; //renta hacer image ValueObject por DDD?
+        this.image = image;
     }
 
     public String name() {
         return name.name();
-    } //me acabo de fijar que no entiendo por qué tenemos getters que me da la sensacion de estasr duplicados
+    }
 
     public String description() {
         return description.description();
-    } //no tenemos el metodo .description en ExerciseDescription
-
-    public ExerciseName getName() {
-        return name;
     }
 
-    public ExerciseDescription getDescription() {
-        return description;
-    }
-
-    public String getImage() {
+    public String image() {
         return image;
-    }
-
-    public MuscleGroup getGroup() {
-        return group;
-    }
-
-    public ExerciseCategory getCategory() {
-        return category;
     }
 
     public String group() {

@@ -30,10 +30,6 @@ public class ExerciseEntity {
         this.muscleGroup = muscleGroup;
         this.exerciseCategory = exerciseCategory;
         this.image = image;
-
-
-
-
     }
 }
 
