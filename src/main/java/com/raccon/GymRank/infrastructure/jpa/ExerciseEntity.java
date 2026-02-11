@@ -24,12 +24,16 @@ public class ExerciseEntity {
     private String exerciseCategory;
     private String image;
 
-    public ExerciseEntity(String image, String exerciseCategory, String muscleGroup, String description, String name) {
-        this.image = image;
-        this.exerciseCategory = exerciseCategory;
-        this.muscleGroup = muscleGroup;
-        this.description = description;
+    public ExerciseEntity(String name, String description, String muscleGroup, String exerciseCategory, String image ) {
         this.name = name;
+        this.description = description;
+        this.muscleGroup = muscleGroup;
+        this.exerciseCategory = exerciseCategory;
+        this.image = image;
+
+
+
+
     }
 }
 
