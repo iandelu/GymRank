@@ -7,7 +7,7 @@ import com.raccon.GymRank.domain.model.vo.ExerciseDescription;
 import com.raccon.GymRank.domain.model.vo.ExerciseName;
 import com.raccon.GymRank.infrastructure.jpa.ExerciseEntity;
 
-public class ExerciseMapper {
+public class ExerciseModelToExerciseEntityMapper {
 
     //domain (Exercise) -> entity (ExerciseEntity)
     public static ExerciseEntity toEntity (Exercise model){

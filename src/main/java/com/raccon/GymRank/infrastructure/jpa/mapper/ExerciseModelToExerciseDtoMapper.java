@@ -1,16 +1,11 @@
 package com.raccon.GymRank.infrastructure.jpa.mapper;
 
 import com.raccon.GymRank.domain.model.Exercise;
-import com.raccon.GymRank.domain.model.ExerciseCategory;
-import com.raccon.GymRank.domain.model.MuscleGroup;
-import com.raccon.GymRank.domain.model.vo.ExerciseDescription;
-import com.raccon.GymRank.domain.model.vo.ExerciseName;
-import com.raccon.GymRank.infrastructure.jpa.ExerciseEntity;
 import com.raccon.GymRank.infrastructure.web.dto.ExerciseDTO;
 
 import java.util.UUID;
 
-public class ExerciseDtoMapper {
+public class ExerciseModelToExerciseDtoMapper {
 
     //domain (Exercise) -> DTO (ExerciseDTO)
     public static ExerciseDTO toDTO (Exercise model){
