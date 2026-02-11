@@ -17,14 +17,11 @@ public class ExerciseModelToEntityMapper {
 
     public static Exercise toModel(ExerciseEntity entity) {
         return new Exercise(
-           new ExerciseName(entity.getName()),
-           new ExerciseDescription(entity.getDescription()),
-           entity.getImage(),
-           MuscleGroup.valueOf(entity.getMuscleGroup().toUpperCase()),
-           ExerciseCategory.valueOf(entity.getExerciseCategory().toUpperCase())
-
-                //no se esta mal porque creo que la clase Exercise está mal
+                entity.getName(),
+                entity.getDescription(),
+                entity.getImage(),
+                entity.getMuscleGroup(),
+                entity.getExerciseCategory()
         );
     }
-
 }
