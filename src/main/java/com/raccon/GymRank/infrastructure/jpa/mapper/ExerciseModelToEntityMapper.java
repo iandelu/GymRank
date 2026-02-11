@@ -19,9 +19,9 @@ public class ExerciseModelToEntityMapper {
         return new Exercise(
                 entity.getName(),
                 entity.getDescription(),
-                entity.getImage(),
                 entity.getMuscleGroup(),
-                entity.getExerciseCategory()
+                entity.getExerciseCategory(),
+                entity.getImage()
         );
     }
 }

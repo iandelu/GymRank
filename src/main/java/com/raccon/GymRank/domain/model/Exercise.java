@@ -11,7 +11,7 @@ public class Exercise{
     private final ExerciseCategory category;
     private final String image;
 
-    public Exercise(String name, String description, String image, String group, String category) {
+    public Exercise(String name, String description, String group, String category, String image) {
         this.name = new ExerciseName(name);
         this.description = new ExerciseDescription(description);
         this.group = MuscleGroup.fromValue(group);

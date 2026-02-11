@@ -20,9 +20,9 @@ public class JpaExerciseRepository implements ExerciseRepository {
 
 
     @Override
-    public void save(Exercise exercise) {
+    public UUID save(Exercise exercise) {
         ExerciseEntity entity = ExerciseModelToEntityMapper.toEntity(exercise);
-        repo.save(entity);
+        return repo.save(entity).getId();
     }
 
     @Override

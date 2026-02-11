@@ -4,7 +4,7 @@ import com.raccon.GymRank.infrastructure.web.dto.ExerciseDTO;
 
 import java.util.UUID;
 
-public interface FetchExercise {
+public interface FetchExerciseUseCase {
 
     ExerciseDTO fetchExerciseById(UUID id);
 }
