@@ -7,8 +7,6 @@ import com.raccon.GymRank.domain.model.vo.ExerciseDescription;
 import com.raccon.GymRank.domain.model.vo.ExerciseName;
 import com.raccon.GymRank.infrastructure.jpa.ExerciseEntity;
 
-import java.util.UUID;
-
 public class ExerciseMapper {
 
     //domain (Exercise) -> entity (ExerciseEntity)
