@@ -1,19 +1,45 @@
 package com.raccon.GymRank.application.service;
 
-import com.raccon.GymRank.application.useCases.FetchExercise;
+import com.raccon.GymRank.application.useCases.FetchExerciseUseCase;
+import com.raccon.GymRank.application.useCases.SaveExerciseUseCase;
 import com.raccon.GymRank.domain.exception.ResourceNotFoundException;
+import com.raccon.GymRank.domain.model.Exercise;
+import com.raccon.GymRank.domain.repository.ExerciseRepository;
 import com.raccon.GymRank.infrastructure.web.dto.ExerciseDTO;
+import com.raccon.GymRank.infrastructure.web.dto.ExerciseModelToDtoMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class ExerciseService implements FetchExercise {
+public class ExerciseService implements FetchExerciseUseCase, SaveExerciseUseCase {
+
+    private final ExerciseRepository repo;
+
+    public ExerciseService(ExerciseRepository repo) {
+        this.repo = repo;
+    }
+
 
     @Override
     public ExerciseDTO fetchExerciseById(UUID id) {
-        if (id.equals(UUID.fromString("ee750fa6-f006-46d9-b276-e35674ca1c71"))) throw new ResourceNotFoundException("No such exercise in database for id : " + id);
-        return ExerciseDTO.emptyExercise();
+
+        Optional<Exercise> exercise = repo.findById(id);
+
+        return exercise
+                .map(ExerciseModelToDtoMapper::toDTO)
+                .orElseThrow(() -> new ResourceNotFoundException("No such exercise in database for id : " + id));
     }
 
+    @Override
+    public UUID saveExercise(ExerciseDTO dto) {
+
+        try {
+            Exercise exercise = ExerciseModelToDtoMapper.toModel(dto);
+            return repo.save(exercise);
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

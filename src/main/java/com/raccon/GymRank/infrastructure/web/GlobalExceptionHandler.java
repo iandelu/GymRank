@@ -19,6 +19,16 @@ public class GlobalExceptionHandler {
         );
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorDTO> handleIllegalArgumentException(IllegalArgumentException e){
+        ErrorDTO error = new ErrorDTO(
+                e.getMessage(),
+                "Bad request",
+                HttpStatus.NOT_FOUND.value()
+        );
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 }

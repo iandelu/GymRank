@@ -13,4 +13,6 @@ public class HealthController {
     public ResponseEntity<String> healthCheck(){
         return ResponseEntity.ok("Service up");
     }
+
+
 }

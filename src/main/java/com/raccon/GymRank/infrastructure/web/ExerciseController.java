@@ -1,13 +1,10 @@
 package com.raccon.GymRank.infrastructure.web;
 
-import com.raccon.GymRank.application.service.ExerciseService;
-import com.raccon.GymRank.application.useCases.FetchExercise;
+import com.raccon.GymRank.application.useCases.FetchExerciseUseCase;
+import com.raccon.GymRank.application.useCases.SaveExerciseUseCase;
 import com.raccon.GymRank.infrastructure.web.dto.ExerciseDTO;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -15,14 +12,23 @@ import java.util.UUID;
 @RequestMapping("/api/exercise")
 public class ExerciseController {
 
-    FetchExercise fetchExercise;
+    FetchExerciseUseCase fetchExerciseUseCase;
+    SaveExerciseUseCase saveExerciseUseCase;
 
-    public ExerciseController(ExerciseService fetchExercise) {
-        this.fetchExercise = fetchExercise;
+    public ExerciseController(FetchExerciseUseCase fetchExerciseUseCase, SaveExerciseUseCase saveExerciseUseCase) {
+        this.fetchExerciseUseCase = fetchExerciseUseCase;
+        this.saveExerciseUseCase = saveExerciseUseCase;
+
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ExerciseDTO> getExercise(@PathVariable UUID id) {
-            return ResponseEntity.ok(fetchExercise.fetchExerciseById(id));
+            return ResponseEntity.ok(fetchExerciseUseCase.fetchExerciseById(id));
     }
+
+    @PostMapping
+    public ResponseEntity<UUID> createExercise(@RequestBody ExerciseDTO dto){
+            return ResponseEntity.ok(saveExerciseUseCase.saveExercise(dto));
+    }
+
 }
