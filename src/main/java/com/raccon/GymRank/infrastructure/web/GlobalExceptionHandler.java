@@ -26,9 +26,9 @@ public class GlobalExceptionHandler {
         ErrorDTO error = new ErrorDTO(
                 e.getMessage(),
                 "Bad request",
-                HttpStatus.NOT_FOUND.value()
+                HttpStatus.BAD_REQUEST.value()
         );
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 }

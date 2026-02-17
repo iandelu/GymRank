@@ -3,13 +3,15 @@ package com.raccon.GymRank.infrastructure.web;
 import com.raccon.GymRank.application.useCases.FetchExerciseUseCase;
 import com.raccon.GymRank.application.useCases.SaveExerciseUseCase;
 import com.raccon.GymRank.infrastructure.web.dto.ExerciseDTO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/exercise")
+@RequestMapping("/api/exercises")
+@Tag(name = "Exercise", description = "This is the first version of exercise management API")
 public class ExerciseController {
 
     FetchExerciseUseCase fetchExerciseUseCase;
