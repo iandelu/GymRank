@@ -1,0 +1,36 @@
+package com.raccon.GymRank.excercises.infrastructure.web;
+
+import com.raccon.GymRank.excercises.application.useCases.FetchExerciseUseCase;
+import com.raccon.GymRank.excercises.application.useCases.SaveExerciseUseCase;
+import com.raccon.GymRank.excercises.infrastructure.web.dto.ExerciseDTO;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/api/exercises")
+@Tag(name = "Exercise", description = "This is the first version of exercise management API")
+public class ExerciseController {
+
+    FetchExerciseUseCase fetchExerciseUseCase;
+    SaveExerciseUseCase saveExerciseUseCase;
+
+    public ExerciseController(FetchExerciseUseCase fetchExerciseUseCase, SaveExerciseUseCase saveExerciseUseCase) {
+        this.fetchExerciseUseCase = fetchExerciseUseCase;
+        this.saveExerciseUseCase = saveExerciseUseCase;
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ExerciseDTO> getExercise(@PathVariable UUID id) {
+            return ResponseEntity.ok(fetchExerciseUseCase.fetchExerciseById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<UUID> createExercise(@RequestBody ExerciseDTO dto){
+            return ResponseEntity.ok(saveExerciseUseCase.saveExercise(dto));
+    }
+
+}
