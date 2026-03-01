@@ -1,10 +1,8 @@
 package com.raccon.GymRank.excercises.infrastructure.jpa;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import java.util.UUID;
 
 
