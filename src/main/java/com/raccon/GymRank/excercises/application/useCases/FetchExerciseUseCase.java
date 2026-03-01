@@ -1,6 +1,6 @@
 package com.raccon.GymRank.excercises.application.useCases;
 
-import com.raccon.GymRank.excercises.infrastructure.web.dto.ExerciseDTO;
+import com.raccon.GymRank.excercises.application.dto.ExerciseDTO;
 
 import java.util.UUID;
 

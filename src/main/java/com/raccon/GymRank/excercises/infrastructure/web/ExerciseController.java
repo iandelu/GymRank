@@ -2,7 +2,7 @@ package com.raccon.GymRank.excercises.infrastructure.web;
 
 import com.raccon.GymRank.excercises.application.useCases.FetchExerciseUseCase;
 import com.raccon.GymRank.excercises.application.useCases.SaveExerciseUseCase;
-import com.raccon.GymRank.excercises.infrastructure.web.dto.ExerciseDTO;
+import com.raccon.GymRank.excercises.application.dto.ExerciseDTO;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

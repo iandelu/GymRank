@@ -5,8 +5,8 @@ import com.raccon.GymRank.excercises.application.useCases.SaveExerciseUseCase;
 import com.raccon.GymRank.excercises.domain.exception.ResourceNotFoundException;
 import com.raccon.GymRank.excercises.domain.model.Exercise;
 import com.raccon.GymRank.excercises.domain.repository.ExerciseRepository;
-import com.raccon.GymRank.excercises.infrastructure.web.dto.ExerciseDTO;
-import com.raccon.GymRank.excercises.infrastructure.web.dto.ExerciseModelToDtoMapper;
+import com.raccon.GymRank.excercises.application.dto.ExerciseDTO;
+import com.raccon.GymRank.excercises.application.dto.ExerciseModelToDtoMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
