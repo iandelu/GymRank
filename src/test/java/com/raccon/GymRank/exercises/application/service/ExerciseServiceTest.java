@@ -4,7 +4,7 @@ import com.raccon.GymRank.excercises.application.service.ExerciseService;
 import com.raccon.GymRank.excercises.domain.exception.ResourceNotFoundException;
 import com.raccon.GymRank.excercises.domain.model.Exercise;
 import com.raccon.GymRank.excercises.domain.repository.ExerciseRepository;
-import com.raccon.GymRank.excercises.infrastructure.web.dto.ExerciseDTO;
+import com.raccon.GymRank.excercises.application.dto.ExerciseDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

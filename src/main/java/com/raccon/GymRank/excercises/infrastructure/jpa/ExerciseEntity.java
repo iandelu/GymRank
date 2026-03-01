@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 
-@Entity
+@Entity(name = "exercises")
 @NoArgsConstructor
 @Getter
 public class ExerciseEntity {

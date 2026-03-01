@@ -1,4 +1,4 @@
-package com.raccon.GymRank.excercises.infrastructure.web.dto;
+package com.raccon.GymRank.excercises.application.dto;
 
 import lombok.Getter;
 

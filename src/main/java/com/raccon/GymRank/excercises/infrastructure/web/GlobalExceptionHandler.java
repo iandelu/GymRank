@@ -1,7 +1,7 @@
 package com.raccon.GymRank.excercises.infrastructure.web;
 
 import com.raccon.GymRank.excercises.domain.exception.ResourceNotFoundException;
-import com.raccon.GymRank.excercises.infrastructure.web.dto.ErrorDTO;
+import com.raccon.GymRank.excercises.application.dto.ErrorDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
