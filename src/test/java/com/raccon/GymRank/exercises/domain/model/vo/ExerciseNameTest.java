@@ -1,6 +1,5 @@
 package com.raccon.GymRank.exercises.domain.model.vo;
 
-import com.raccon.GymRank.excercises.domain.model.vo.ExerciseName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

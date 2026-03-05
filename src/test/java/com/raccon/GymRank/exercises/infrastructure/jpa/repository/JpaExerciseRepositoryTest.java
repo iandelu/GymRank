@@ -1,9 +1,7 @@
 package com.raccon.GymRank.exercises.infrastructure.jpa.repository;
 
-import com.raccon.GymRank.excercises.domain.model.Exercise;
-import com.raccon.GymRank.excercises.infrastructure.jpa.ExerciseEntity;
-import com.raccon.GymRank.excercises.infrastructure.jpa.repository.JpaExerciseRepository;
-import com.raccon.GymRank.excercises.infrastructure.jpa.repository.SpringDataExerciseRepository;
+import com.raccon.GymRank.exercises.domain.model.Exercise;
+import com.raccon.GymRank.exercises.infrastructure.jpa.ExerciseEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
