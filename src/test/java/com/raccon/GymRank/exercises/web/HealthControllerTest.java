@@ -2,12 +2,8 @@ package com.raccon.GymRank.exercises.web;
 
 import org.junit.jupiter.api.Test;
 
-class HealthControllerTest extends RequestTestCase{
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-    @Test
-    void getHealth() throws Exception {
-        //ResponseEntity<String> response = doGet("/health");
-    }
+class HealthControllerTest extends RestAcceptanceTest {
 
 }
