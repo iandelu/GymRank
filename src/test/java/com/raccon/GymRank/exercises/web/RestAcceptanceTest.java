@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @Testcontainers
-public abstract class RestTest {
+public abstract class RestAcceptanceTest {
 
     @Container
     static PostgreSQLContainer postgres = new PostgreSQLContainer("postgres:16")
